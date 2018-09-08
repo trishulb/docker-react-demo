@@ -1,0 +1,11 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t tbhuyar/docker-react-demo -f Dockerfile.dev .
+
+script:
+  - docker run tbhuyar/docker-react-demo npm run test -- --coverage
+
+
